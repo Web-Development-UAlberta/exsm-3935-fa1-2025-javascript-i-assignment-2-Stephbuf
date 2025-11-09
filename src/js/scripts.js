@@ -36,24 +36,22 @@ async function main() {
             return;
     }
 
-// Discount Calculation 
+    // Discount Calculation 
 
     let discountAmount = total * discountRate;
     let totalAfterDiscount = total - discountAmount;
 
-// Calculate change
+    // Calculate change
 
     let change = cash - totalAfterDiscount;
 
-  // Output
+    // Output
 
+    if (change < 0) {
+        alert("Insufficient Payment!");
+    } else {
+        alert("Change back to customer: $" + change.toFixed(2));
 
-
-if (change < 0) {
-  alert("Insufficient Payment!");
-} else {
-  alert("Change back to customer: $" + change.toFixed(2));
-
-}
-main();
+    }
+    main();
 }
