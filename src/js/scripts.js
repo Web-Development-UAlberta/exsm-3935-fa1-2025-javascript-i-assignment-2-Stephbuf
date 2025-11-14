@@ -4,9 +4,9 @@ async function main() {
 
     // User input
 
-    let total = parseFloat(prompt("Enter total cost of goods:"));
-    let cash = parseFloat(prompt("Enter amount received by customer:"));
-    let discountCode = parseInt(prompt("Enter a discount code between 0 - 5 :"));
+    let total = parseFloat(await input("Enter total cost of goods:"));
+    let cash = parseFloat(await input("Enter amount received by customer:"));
+    let discountCode = parseInt(await input("Enter a discount code between 0 - 5 :"));
 
     // Calculate discount
 
@@ -32,7 +32,7 @@ async function main() {
             discountRate = 0.40;
             break;
         default:
-            alert("Invalid discount code! Please enter a number between 0 and 5.");
+            output("Invalid discount code! Please enter a number between 0 and 5.");
             return;
     }
 
@@ -48,10 +48,11 @@ async function main() {
     // Output
 
     if (change < 0) {
-        alert("Insufficient Payment!");
+        output("Insufficient Payment!");
     } else {
-        alert("Change back to customer: $" + change.toFixed(2));
+        output("Change back to customer: $" + change.toFixed(2));
 
     }
-    main();
+   
 }
+ main();
